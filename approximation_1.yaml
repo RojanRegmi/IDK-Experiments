@@ -1,0 +1,21 @@
+timeseries:
+- name: Approximation 1
+  length: 1000
+  base-oscillations:
+  - kind: sine
+    frequency: 4.0
+    amplitude: 1.1
+    variance: 0.05
+  anomalies:
+  - exact-position: 0
+    length: 100
+    kinds:
+    - kind: frequency
+      frequency_factor: 1.1
+  - position: middle
+    length: 200
+    kinds:
+    - kind: mean
+      offset: 0.257
+  
+    
