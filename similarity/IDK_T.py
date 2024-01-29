@@ -16,6 +16,7 @@ def IDK_T(X, psi1,width,psi2,t=100):
         sample_list = [p for p in range(X.shape[0])]
         sample_list = random.sample(sample_list, sample_num)
         sample = X[sample_list, :]
+
         tem1 = np.dot(np.square(X), np.ones(sample.T.shape))  # n*psi
         tem2 = np.dot(np.ones(X.shape), np.square(sample.T))
         point2sample = tem1 + tem2 - 2 * np.dot(X, sample.T)  # n*psi
