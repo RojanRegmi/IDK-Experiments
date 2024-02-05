@@ -2,6 +2,12 @@ import random
 
 import numpy as np
 
+"""
+All comments and definitions are according to the paper:
+
+Ting, Liu et. al, A New Distributional Treatment for Time Series and An Anomaly Detection, 2022
+"""
+
 
 def IK_inne_fm(X,psi,t=100):
 
@@ -23,7 +29,7 @@ def IK_inne_fm(X,psi,t=100):
 
     onepoint_matrix = np.zeros((X.shape[0], (int)(t*psi)), dtype=int)
     for time in range(t):
-        sample_num = psi  #
+        sample_num = psi 
         sample_list = [p for p in range(len(X))]
         sample_list = random.sample(sample_list, sample_num)
         sample = X[sample_list, :] # Sample is randomly selected points in X of size psi.
@@ -45,13 +51,17 @@ def IK_inne_fm(X,psi,t=100):
         sample2sample[row, col] = 99999999 # Diagonal Elements are set to a large value to ensure that the minimum distance is not from the point to itself.
         radius_list = np.min(sample2sample, axis=1) # This line calculates the minimum distance from each point in 'X' to its nearest neighbour in the current sample
 
-        min_point2sample_index=np.argmin(point2sample, axis=1)
+        """
+            According to definition 2 in the paper, We are looking for each point in X, for it's closest point in the sample.
+
+            The feature mapping kernel converts this index to 1 and everything else is zero.
+        """
+
+        min_point2sample_index=np.argmin(point2sample, axis=1) # Minimum distance from each sample to X
         min_dist_point2sample = min_point2sample_index+time*psi
         point2sample_value = point2sample[range(len(onepoint_matrix)), min_point2sample_index]
         ind=point2sample_value < radius_list[min_point2sample_index] # This line creates a boolean array where each element is true if the distance from a point in X to its closest neighbour in the sample is less than the corresponding radius
         onepoint_matrix[ind,min_dist_point2sample[ind]]=1
-
-
 
     return onepoint_matrix
 
