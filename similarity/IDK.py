@@ -53,7 +53,6 @@ def IK_inne_fm(X,psi,t=100):
 
         """
             According to definition 2 in the paper, We are looking for each point in X, for it's closest point in the sample.
-
             The feature mapping kernel converts this index to 1 and everything else is zero.
         """
 
