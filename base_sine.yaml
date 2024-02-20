@@ -1,14 +1,14 @@
 timeseries:
 - name: base-sine
-  length: 1000
+  length: 5000
   base-oscillations:
   - kind: sine
     frequency: 4.0
     amplitude: 1.0
-    variance: 0.05
+    variance: 0.00
   anomalies:
   - exact-position: 0
-    length: 995
+    length: 4995
     kinds:
     - kind: amplitude
       amplitude_factor: 1.1

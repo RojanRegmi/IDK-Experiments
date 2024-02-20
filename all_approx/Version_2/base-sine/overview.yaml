@@ -1,0 +1,19 @@
+generated-timeseries:
+- anomalies:
+  - exact-position: 0
+    kinds:
+    - amplitude_factor: 1.1
+      kind: amplitude
+    length: 4995
+  base-oscillations:
+  - amplitude: 1.0
+    frequency: 4.0
+    kind: sine
+    variance: 0.0
+  generation-id: 0
+  length: 5000
+  name: base-sine
+meta:
+  download_link: https://gitlab.hpi.de/akita/guten-tag
+  git_commit_sha: 808c24973692cd3b698dca7c7bf963745aa9bd3a
+  seed: 42

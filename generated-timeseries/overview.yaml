@@ -1,0 +1,19 @@
+generated-timeseries:
+- anomalies:
+  - exact-position: 750
+    kinds:
+    - amplitude_factor: 1.25
+      kind: amplitude
+    length: 250
+  base-oscillations:
+  - amplitude: 1.1
+    frequency: 4.0
+    kind: sine
+    variance: 0.0
+  generation-id: 0
+  length: 5000
+  name: Approximation6
+meta:
+  download_link: https://gitlab.hpi.de/akita/guten-tag
+  git_commit_sha: 808c24973692cd3b698dca7c7bf963745aa9bd3a
+  seed: 42

@@ -1,16 +1,16 @@
 timeseries:
-- name: Approximation 2
-  length: 1000
+- name: Approximation6
+  length: 5000
   base-oscillations:
   - kind: sine
     frequency: 4.0
     amplitude: 1.1
-    variance: 0.05
+    variance: 0.00
   anomalies:
-  - exact-position: 0
-    length: 400
+  - exact-position: 750
+    length: 150
     kinds:
-    - kind: pattern
-      sinusoid_k: 1.1
+    - kind: amplitude
+      amplitude_factor: 1.25
   
     
