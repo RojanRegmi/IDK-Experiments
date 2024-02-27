@@ -26,7 +26,7 @@ class iNN_IK:
             subIndex = sample(range(sn), self.psi)
             self.centroid.append(subIndex)
             tdata = self.data[subIndex, :]
-            tt_dis = cdist(tdata, tdata)
+            tt_dis = cdist(tdata, tdata) # computes the distance between each pair of the two collections of inputs. The default metric is 'Euclidean'.
             radius = [] #restore centroids' radius
             for r_idx in range(self.psi):
                 r = tt_dis[r_idx]
