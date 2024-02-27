@@ -2,6 +2,7 @@ import numpy as np
 from random import sample
 from scipy.spatial.distance import cdist
 from scipy.sparse import csr_matrix
+
 class iNN_IK:
     data = None
     centroid = []
@@ -10,6 +11,10 @@ class iNN_IK:
         self.t = t
 
     def fit_transform(self, data):
+
+        """
+           Implements a clustering-based approach for kernel mapping
+        """
         self.data = data
         self.centroid = []
         self.centroids_radius = []

@@ -1,7 +1,9 @@
 import numpy as np
 import sys
 #sys.path.append("/home/wangyf/trajectoryProject")
-from iNNE_IK import *
+
+from .iNNE_IK import *
+
 
 def idk_kernel_map(list_of_distributions, psi, t=100):
     """
@@ -30,6 +32,9 @@ def idk_kernel_map(list_of_distributions, psi, t=100):
     return idkmap
 
 def idk_square(list_of_distributions, psi1,  psi2, t1=100, t2=100):
+
+    # IDK Group Anomaly Detector
+    
     idk_map1 = idk_kernel_map(list_of_distributions, psi1, t1)
     #np.save(idkmapsavepath + "/idkmap1_psi1_"+str(psi1)+".npy", idk_map1)
     inne_ik = iNN_IK(psi2, t2)
@@ -40,6 +45,9 @@ def idk_square(list_of_distributions, psi1,  psi2, t1=100, t2=100):
     return idk_score
 
 def idk_anomalyDetector(data, psi, t=100):
+
+    # IDK Point Anomaly Detector
+
     inne_ik = iNN_IK(psi, t)
     idk_map = inne_ik.fit_transform(data).toarray()
     idkm_mean = np.average(idk_map, axis=0) / t
