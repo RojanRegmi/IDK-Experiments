@@ -1,7 +1,9 @@
 ﻿import numpy as np
 import random
+import sys
+sys.path.append('..')
 
-from IDK import IDK
+from .IDK import IDK
 
 
 def IDK_T(X, psi1,width,psi2,t=100):
